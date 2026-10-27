@@ -53,8 +53,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Copy built frontend dist folders from Stage 1 into proper locations
-# COPY --from=frontend-builder /build/sces-frontend/dist ./Talent\ Vellocity/sces/frontend/dist
-COPY --from=frontend-builder /build/sces-frontend/dist "./Talent Vellocity/sces/frontend/dist"
+COPY --from=frontend-builder /build/sces-frontend/dist ./Talent\ Vellocity/sces/frontend/dist
 COPY --from=frontend-builder /build/capstone-frontend/dist ./final-capstone-project-agentic-ai-interview-preparation-assistant/frontend/dist
 
 # Expose default Render port
