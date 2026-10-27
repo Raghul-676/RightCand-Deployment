@@ -1,0 +1,31 @@
+# ==============================================================================
+# RightCand & SCES - Production Deployment Dependencies (Render Ready)
+# ==============================================================================
+
+# Core API & ASGI Web Server
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.1
+pydantic[email]>=2.7.1
+python-multipart>=0.0.9
+requests>=2.31.0
+httpx>=0.27.2
+jinja2>=3.1.0
+
+# Database & Authentication Security
+sqlalchemy>=2.0.30
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.1
+
+# AI & Multi-Agent Inference
+groq>=0.11.0
+python-dotenv>=1.0.1
+
+# Document Analysis (Resume & JD PDF parsing)
+pypdf>=4.0.0
+
+# Git & Code Analysis (for Repository Analyzer pipeline)
+gitpython>=3.1.40
+scikit-learn>=1.3.2
+numpy>=1.24.3

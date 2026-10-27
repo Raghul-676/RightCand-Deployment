@@ -1,0 +1,32 @@
+# ==============================================================================
+# Render Blueprint Specification (render.yaml)
+# https://render.com/docs/blueprint-spec
+# ==============================================================================
+# This blueprint defines a single fullstack web service hosting the entire
+# RightCand & SCES platform (Frontend + APIs + Agents + Verdict Dashboard).
+# Deploying as a single service is 100% FREE on Render and avoids CORS issues.
+# ==============================================================================
+
+services:
+  - type: web
+    name: rightcand-fullstack
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+        # Enter your Groq API key in the Render dashboard
+      - key: GITHUB_TOKEN
+        sync: false
+        # Optional: Increases GitHub API rate limits from 60 to 5,000 req/hr
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: PORT
+        value: "10000"

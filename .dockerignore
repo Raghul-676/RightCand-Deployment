@@ -1,0 +1,16 @@
+.git
+.github
+.vscode
+.kilo
+**/node_modules
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.env
+**/venv
+**/gitenv
+**/interviewer_env
+**/dist
+**/*.log
+**/.DS_Store
